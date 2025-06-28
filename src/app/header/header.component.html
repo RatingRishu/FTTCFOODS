@@ -1,0 +1,15 @@
+<nav class="navbar">
+  <div class="logo">
+    <img src="/assets/IMG/Final LOGO.png" alt="FTTC logo" />
+    <span class="brand">FTTC</span>
+  </div>
+
+  <button class="menu-toggle" (click)="toggleMenu()">☰</button>
+
+  <div class="nav-links" [class.active]="menuOpen">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a routerLink="/products" routerLinkActive="active">Products</a>
+    <a routerLink="/about" routerLinkActive="active">About</a>
+    <a routerLink="/contact" routerLinkActive="active">Contact</a>
+  </div>
+</nav>

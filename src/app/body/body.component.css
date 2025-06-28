@@ -1,0 +1,47 @@
+.hero {
+  position: relative;
+  background: none; /* remove original background to add blur layer */
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('/assets/IMG/BG-01.png') no-repeat center center/cover;
+  filter: blur(3px);
+  transform: scale(1.1); /* prevents blur cutoff at edges */
+  z-index: -1;
+  opacity: 0.9;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+

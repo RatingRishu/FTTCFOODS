@@ -1,1 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f3eab8;
+}
+
+header {
+  background-color: #e0f7e0;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  color: #4CAF50;
+}
+
+.shop-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.about, .categories, .testimonials {
+  background: #fff;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.categories {
+  display: flex;
+  justify-content: space-around;
+}
+
+.category {
+  text-align: center;
+  padding: 10px;
+}
+
+.category img {
+  width: 100px;
+  height: 100px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #e0f7e0;
+  position: relative;
+  bottom: 0;
+}

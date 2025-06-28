@@ -1,0 +1,32 @@
+.about-section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.about-section h2 {
+  color: #4CAF50;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.about-values {
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.about-values div {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 400px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
