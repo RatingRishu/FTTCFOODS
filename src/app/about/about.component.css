@@ -30,3 +30,48 @@
   max-width: 400px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
+
+
+
+
+/* -------------------------------- */
+
+.about-section {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.about-values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.about-values > div {
+  /* flex: 1 1 300px; */
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  text-align: left;
+}
+
+.founder-card {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.founder-card img {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}

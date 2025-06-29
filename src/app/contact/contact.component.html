@@ -2,15 +2,21 @@
   <h2>Contact Us</h2>
   <p>If you have any questions or feedback, feel free to reach out!</p>
 
-  <form class="contact-form">
-    <input type="text" placeholder="Your Name" required />
-    <input type="email" placeholder="Your Email" required />
-    <textarea rows="5" placeholder="Your Message" required></textarea>
+  <form class="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+    <input type="hidden" name="access_key" value="7927bf9c-19fa-4620-bd0c-141a297076c4" ngModel>
+
+    <input type="text" name="name" [(ngModel)]="formData.name" placeholder="Your Name" required />
+    <input type="email" name="email" [(ngModel)]="formData.email" placeholder="Your Email" required />
+    <textarea name="message" [(ngModel)]="formData.message" rows="5" placeholder="Your Message" required></textarea>
     <button type="submit">Send Message</button>
   </form>
 
+  <div class="popup" *ngIf="showPopup">
+    ✅ Your message has been sent successfully!
+  </div>
+
   <div class="contact-info">
-    <p><strong>Email:</strong> supportfttcfoods.com</p>
+    <p><strong>Email:</strong> fttcfoods<span>&#64;</span>gmail.com</p>
     <p><strong>Phone:</strong> +91 6201616907</p>
     <p><strong>Address:</strong> FTTC Foods, Patna, Bihar, India</p>
   </div>
