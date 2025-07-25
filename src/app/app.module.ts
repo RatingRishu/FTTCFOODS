@@ -22,7 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
     BodyComponent,
     ProductComponent,
     FooterComponent,
-    CartComponent
+    CartComponent,
   ],
   imports: [
     BrowserModule,
