@@ -12,6 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import { CartComponent } from './cart/cart.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ShowCaseComponent } from './show-case/show-case.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     ProductComponent,
     FooterComponent,
     CartComponent,
+    ShowCaseComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,99 +1,53 @@
-<h3 style="text-align: center;">Pan india delivery only <span>&#64;</span>49</h3>
+<h3 class="banner-title">
+  Pan India Delivery Only <span>&#64;</span>49
+</h3>
+
 <section class="product-section">
   <div class="product-card-wrapper">
-    <div class="card">
+
+    <!-- Card Example -->
+    <div class="product-card" *ngFor="let product of products">
       <div class="card__shine"></div>
       <div class="card__glow"></div>
-      <div class="card__content">
-        <div class="card__badge">25% OFF</div>
-        <div class="card__image">
-          <img src="/assets/IMG/20250513_0830_Creative Rice Display_remix_01jv3sa44ae5nr7qvqvvqjcb9g.png"
-            alt="Sonachur Rice" />
+      <div class="product-content">
+        
+        <!-- Discount Badge -->
+        <div class="discount-badge">{{ product.discount }}</div>
+
+        <!-- Product Image / Video -->
+        <div class="product-media">
+          <ng-container *ngIf="product.type === 'video'; else imageTemplate">
+            <video 
+              [src]="product.media" 
+              autoplay muted loop playsinline>
+            </video>
+          </ng-container>
+          <ng-template #imageTemplate>
+            <img [src]="product.media" [alt]="product.title" />
+          </ng-template>
         </div>
-        <div class="card__text">
-          <p class="card__title">Sonachur Rice</p>
-          <p class="tagline">Aromatic, Soft texture</p>
-          <p class="card__description">🌿 100% Organic & Chemical-Free <br> 🍚 Aromatic Soft Texture After Cooking</p>          
+
+        <!-- Product Info -->
+        <div class="product-info">
+          <h4 class="product-title">{{ product.title }}</h4>
+          <p class="product-tagline">{{ product.tagline }}</p>
+          <p class="product-description" [innerHTML]="product.description"></p>
         </div>
-        <div class="card__footer">
-          <div class="card__price">₹ 200/per Kg </div>
-          <div class="card__button" routerLink="/cart">
-            <a class="buy-now-btn">Buy Now</a>
-          </div>
+
+        <!-- Footer -->
+        <div class="product-footer">
+          <span class="price">₹ {{ product.price }}/per Kg</span>
+          <a class="buy-now-btn" routerLink="/cart">Buy Now</a>
         </div>
       </div>
     </div>
-    <div class="card">
-      <div class="card__shine"></div>
-      <div class="card__glow"></div>
-      <div class="card__content">
-        <div class="card__badge">25% OFF</div>
-        <div class="card__image">
-          <img src="/assets/IMG/20250518_2048_Chintu Rice Promotion_remix_01jvhzg6m6estbc5s55s8jf4ka.png"
-            alt="Chintu Rice" />
-        </div>
-        <div class="card__text">
-          <p class="card__title">Chintu Rice</p>
-          <p class="tagline">The Black Pearl of Ayurveda</p>
-          <p class="card__description">🌿 100% Organic & Chemical-Free <br> 🍚 Soft, Fluffy Texture After Cooking</p>
-        </div>
-        <div class="card__footer">
-          <div class="card__price">₹ 200/per Kg</div>
-          <div class="card__button" routerLink="/cart">
-            <a class="buy-now-btn">Buy Now</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card__shine"></div>
-      <div class="card__glow"></div>
-      <div class="card__content">
-        <div class="card__badge">25% OFF</div>
-        <div class="card__image">
-          <img src="/assets/IMG/20250513_0833_KatarnI Rice Packaging_remix_01jv3sezeme95azd4jt8dswdv7.png"
-            alt="Katanrni Rice " />
-        </div>
-        <div class="card__text">
-          <p class="card__title">Katarni Rice </p>
-          <p class="tagline">Royal Taste of Bihar — Authentic & Aromatic</p>
-          <p class="card__description">🌿 100% Organic & Chemical-Free <br> 🍚 Soft, Fluffy Texture After Cooking</p>
-        </div>
-        <div class="card__footer">
-          <div class="card__price">₹ 120/per Kg</div>
-          <div class="card__button" routerLink="/cart">
-            <a class="buy-now-btn">Buy Now</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card__shine"></div>
-      <div class="card__glow"></div>
-      <div class="card__content">
-        <div class="card__badge">25% OFF</div>
-        <div class="card__image">
-          <img src="/assets/IMG/Muti-atta.png" alt="Sonachur Rice" />
-        </div>
-        <div class="card__text">
-          <p class="card__title">Multigrain Aata</p>
-          <p class="tagline">High-Fiber & Nutrient-Rich Flour</p>
-          <p class="card__description">🌾 Blend of 6 Natural Grains <br>  💪 Boosts Energy & Digestion  <br>  ✅ Chemical-Free & Freshly Milled</p>
-        </div>
-        <div class="card__footer">
-          <div class="card__price">₹ 89/per Kg</div>
-          <div class="card__button" routerLink="/cart">
-            <a class="buy-now-btn">Buy Now</a>
-          </div>
-        </div>
-      </div>
-    </div>
+
   </div>
 </section>
 
 <section class="testimonial">
   <h2>What Customers Say</h2>
   <blockquote>
-    “Excellent quality and truly farm-fresh products. Highly recommend!”<br />— Julia M.
+    “{{ testimonial.message }}”<br />— {{ testimonial.author }}
   </blockquote>
 </section>
