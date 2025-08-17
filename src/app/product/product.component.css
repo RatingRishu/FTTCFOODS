@@ -30,7 +30,7 @@
   background: #fff;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
 }
 
@@ -44,19 +44,22 @@
   left: -75%;
   width: 50%;
   height: 100%;
-  background: linear-gradient(
-    120deg, 
-    rgba(255,255,255,0) 0%, 
-    rgba(255,255,255,0.4) 50%, 
-    rgba(255,255,255,0) 100%
-  );
+  background: linear-gradient(120deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0) 100%);
   transform: skewX(-25deg);
   animation: shine 3s infinite;
 }
 
 @keyframes shine {
-  0% { left: -75%; }
-  100% { left: 125%; }
+  0% {
+    left: -75%;
+  }
+
+  100% {
+    left: 125%;
+  }
 }
 
 .card__glow {
@@ -160,4 +163,167 @@
 .testimonial blockquote {
   font-style: italic;
   color: #555;
+}
+
+/* cart css */
+
+/* Cart Section */
+.cart-actions {
+  background: #f9f9f9;
+  padding: 20px;
+  margin: 30px auto;
+  border-radius: 16px;
+  max-width: 600px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.cart-actions h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Cart Item List */
+.cart-actions ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+.cart-actions ul li {
+  background: #fff;
+  margin: 8px 0;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+  display: inline-block;
+  background: #25D366;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-btn:hover {
+  background: #1da851;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cart-actions {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .cart-actions h2 {
+    font-size: 1.3rem;
+  }
+
+  .cart-actions ul li {
+    font-size: 0.95rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .whatsapp-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+  }
+}
+
+
+.qr-container {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.qr-container img {
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.remove-btn {
+  border: none;
+  color: white;
+  border-radius: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.popup-card {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #fff;
+  color: #333;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  animation: slideIn 0.3s ease-out;
+  z-index: 1000;
+  width: 280px;
+}
+
+.popup-card h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+.popup-card p {
+  margin: 0 0 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.popup-actions button {
+  background: #25d366;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.popup-actions button:last-child {
+  background: #555;
+}
+
+.popup-actions button:hover {
+  opacity: 0.9;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

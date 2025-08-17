@@ -5,22 +5,19 @@
 <section class="product-section">
   <div class="product-card-wrapper">
 
-    <!-- Card Example -->
+    <!-- Loop through products -->
     <div class="product-card" *ngFor="let product of products">
       <div class="card__shine"></div>
       <div class="card__glow"></div>
       <div class="product-content">
-        
+
         <!-- Discount Badge -->
         <div class="discount-badge">{{ product.discount }}</div>
 
         <!-- Product Image / Video -->
         <div class="product-media">
           <ng-container *ngIf="product.type === 'video'; else imageTemplate">
-            <video 
-              [src]="product.media" 
-              autoplay muted loop playsinline>
-            </video>
+            <video [src]="product.media" autoplay muted loop playsinline></video>
           </ng-container>
           <ng-template #imageTemplate>
             <img [src]="product.media" [alt]="product.title" />
@@ -37,12 +34,53 @@
         <!-- Footer -->
         <div class="product-footer">
           <span class="price">₹ {{ product.price }}/per Kg</span>
-          <a class="buy-now-btn" routerLink="/cart">Buy Now</a>
+          <button class="buy-now-btn" (click)="addToCart(product)">Add to Cart</button>
         </div>
       </div>
     </div>
 
   </div>
+  <!-- popup-card.component.html -->
+  <div *ngIf="popupVisible" class="popup-card">
+    <h3>{{ selectedProduct?.title }} added to cart 🛒</h3>
+    <p>Price: ₹{{ selectedProduct?.price }}</p>
+
+    <div class="popup-actions">
+      <button (click)="goToCart()">Go to Cart</button>
+      <button (click)="closePopup()">Continue Shopping</button>
+    </div>
+  </div>
+
+</section>
+<!-- Cart + WhatsApp Order Section -->
+<section class="cart-actions" *ngIf="cart.length > 0">
+  <h2>🛒 Your Cart</h2>
+  <!-- <ul>
+    <li *ngFor="let item of cart">{{ item.title }} - ₹{{ item.price }} x {{ item.quantity }}</li>
+    
+  </ul> -->
+
+  <ul>
+    <li *ngFor="let item of cart; let i = index">
+      {{ i + 1 }}. {{ item.title }} - Qty: {{ item.quantity }} - ₹{{ item.price }}
+      <button (click)="removeFromCart(i)" class="remove-btn">❌</button>
+    </li>
+  </ul>
+  <br>
+  <!-- Total Amount -->
+  <div class="cart-total">
+    <p>Delivery Charge: ₹ {{ deliveryCharge }}</p>
+    <strong>Final Total: ₹ {{ getFinalTotal() }}</strong>
+  </div>
+  <br>
+  <div class="qr-container">
+    <p>📱 Scan to Order via WhatsApp:</p>
+    <img [src]="getWhatsAppQR()" alt="WhatsApp QR Code" class="qr-image" />
+  </div>
+  <br>
+  <a [href]="getWhatsAppLink()" target="_blank" class="whatsapp-btn">
+    Order via WhatsApp
+  </a>
 </section>
 
 <section class="testimonial">
