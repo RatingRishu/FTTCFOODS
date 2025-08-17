@@ -1,29 +1,19 @@
-<div class="cube-container">
-    <div class="cube">
-        <div class="face front">
-            <img src="/assets/IMG/20250513_0830_Creative Rice Display_remix_01jv3sa44ae5nr7qvqvvqjcb9g.png" alt=""
-                height="100%" width="100%">
-        </div>
-        <div class="face back"> <img
-                src="/assets/IMG/20250513_0830_Creative Rice Display_remix_01jv3sa44ae5nr7qvqvvqjcb9g.png" alt=""
-                height="100%" width="100%">
-        </div>
-        <div class="face right"> <img
-                src="/assets/IMG/20250513_0830_Creative Rice Display_remix_01jv3sa44ae5nr7qvqvvqjcb9g.png" alt=""
-                height="100%" width="100%">
-        </div>
-        <div class="face left"> <img
-                src="/assets/IMG/20250513_0830_Creative Rice Display_remix_01jv3sa44ae5nr7qvqvvqjcb9g.png" alt=""
-                height="100%" width="100%">
-        </div>
-        <div class="face top"> <img
-                src="/assets/IMG/20250513_0830_Creative Rice Display_remix_01jv3sa44ae5nr7qvqvvqjcb9g.png" alt=""
-                height="100%" width="100%">
-                        <div class="face bottom"> <img
-                    src="/assets/IMG/20250513_0830_Creative Rice Display_remix_01jv3sa44ae5nr7qvqvvqjcb9g.png" alt=""
-                    height="100%" width="100%">
-            </div>
-        </div>
+<div class="review-container">
+  <div class="review-card" *ngFor="let review of reviews">
+    <div class="review-header">
+      <img [src]="review.avatar" alt="Customer Avatar" class="avatar" />
+      <div>
+        <h4>{{ review.name }}</h4>
+        <p class="date">{{ review.date }}</p>
+      </div>
     </div>
 
-    
+    <div class="review-rating">
+      <ng-container *ngFor="let star of [1,2,3,4,5]">
+        <span [class.filled]="star <= review.rating">★</span>
+      </ng-container>
+    </div>
+
+    <p class="review-text">“{{ review.comment }}”</p>
+  </div>
+</div>
