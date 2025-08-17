@@ -70,6 +70,9 @@
   <!-- Total Amount -->
   <div class="cart-total">
     <p>Delivery Charge: ₹ {{ deliveryCharge }}</p>
+    <p class="discount">🎉 Discount ({{ discountPercent }}% OFF): 
+    <strong>-₹{{ getDiscountAmount() }}</strong>
+  </p>
     <strong>Final Total: ₹ {{ getFinalTotal() }}</strong>
   </div>
   <br>

@@ -56,11 +56,10 @@ export class ProductComponent {
   };
   // 🛒 Cart Array
   cart: any[] = [];
-
-  // Delivery charge
   deliveryCharge: number = 49;
   popupVisible: boolean = false;
   selectedProduct: any = null;
+  discountPercent: number = 25;
   // Add item to cart
   // addToCart(product: any) {
   //   this.cart.push({ ...product, quantity: 1 });
@@ -77,6 +76,9 @@ export class ProductComponent {
 
     // Auto-hide after 4 seconds if user does nothing
 
+  }
+  getDiscountAmount(): number {
+    return (this.getCartTotal() * this.discountPercent) / 100;
   }
 
   closePopup() {
@@ -104,9 +106,11 @@ export class ProductComponent {
     });
 
     const subtotal = this.getCartTotal();
+    const discount = this.getDiscountAmount();
     const finalTotal = subtotal + this.deliveryCharge;
 
     message += `Subtotal: ₹${subtotal}\n`;
+    message += `\nDiscount (25% OFF): -₹${discount}`;
     message += `Delivery Charge: ₹${this.deliveryCharge}\n`;
     message += `🔹 Final Total: ₹${finalTotal}`;
 
@@ -120,7 +124,7 @@ export class ProductComponent {
 
   // Final total (with delivery)
   getFinalTotal(): number {
-    return this.getCartTotal() + this.deliveryCharge;
+    return this.getCartTotal() - this.getDiscountAmount() + this.deliveryCharge;
   }
 
   getWhatsAppQR(): string {
