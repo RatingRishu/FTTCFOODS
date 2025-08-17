@@ -110,7 +110,7 @@ export class ProductComponent {
     const finalTotal = subtotal + this.deliveryCharge;
 
     message += `Subtotal: ₹${subtotal}\n`;
-    message += `\nDiscount (25% OFF): -₹${discount}`;
+    message += `\nDiscount (25% OFF): -₹${discount}\n`;
     message += `Delivery Charge: ₹${this.deliveryCharge}\n`;
     message += `🔹 Final Total: ₹${finalTotal}`;
 
