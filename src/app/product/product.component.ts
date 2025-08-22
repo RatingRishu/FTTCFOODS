@@ -44,7 +44,7 @@ export class ProductComponent {
       type: 'image',
       media: '/assets/IMG/multigrain .png',
       title: 'Multigrain Aata',
-      tagline: 'High-Fiber & Nutrient-Rich Flour',
+      tagline: 'High-Fiber, 100% Netural & Nutrient-Rich Flour',
       description: '🌾 Blend of 6 Natural Grains <br> 💪 Boosts Energy & Digestion <br> ✅ Chemical-Free & Freshly Milled',
       price: 89
     }
